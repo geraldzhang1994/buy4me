@@ -1,0 +1,140 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="themes/ecmoban_yixun/qq/images/qq.css" rel="stylesheet" type="text/css" />
+<script language='javascript' src='themes/ecmoban_yixun/qq/ServiceQQ.js' type='text/javascript' charset='utf-8'></script>
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+</script>
+
+<div class="yx_brandhead" style="height: 123px;">
+  <div class="yx_top_toolbar">
+    <div class=" yx_toolbar_cont block">
+      <ul class="yx_toolbar_guide">
+        <li class="item_mobile_icson"><a target="_blank"  href="#" class="lk_mobile_icson" title="模板堂">手机模板堂</a></li>
+        <li class="item_share">
+          <div class="t_tdcode" onmouseover="this.className='t_tdcode tdcode_show'" onmouseout="this.className='t_tdcode'">
+            <div class="tdcode_outter">
+              <div class="tdcode_inner"> <i class="arrow_outter">◆</i><i class="arrow_inner">◆</i>
+                <div class="pic"></div>
+                <p class="txt">微信扫描二维码，随时随地与模板堂亲密接触<br>
+                  精彩活动，劲爆优惠触手可得！</p>
+              </div>
+            </div>
+          </div>
+          <a  target="_blank" href="http://e.t.qq.com/ecmoban_com" class="t_qq" title="关注模板堂官方腾讯微博"><span class="hide_clip">腾讯微博</span></a> <a  target="_blank" href="http://e.weibo.com/ECMBT?topnav=11" class="t_sina" title="关注模板堂官方新浪微博"><span class="hide_clip">新浪微博</span></a> </li>
+        <li class="toolbar_gap">|</li>
+        <li class="item current"><a target="_blank" href="index.php">模板堂&nbsp;</a></li>
+      </ul>
+      <ul class="yx_toolbar_nav">
+        <li class="item"> {insert_scripts files='utils.js'} <font id="ECS_MEMBERZONE">{* ECSHOP 提醒您：根据用户id来调用member_info.lbi显示不同的界面  *}{insert name='member_info'} </font> </li>
+        <li class="item">
+          <div class="f_l log"  style="position:relative; z-index:999999999; ">
+            <ul class="ul1" onmouseover="this.className='ul1 ul1_on'" onmouseout="this.className='ul1'">
+              <a class="a1" href="user.php">用户中心</a>
+              <div class="ul1_float">
+                <ul>
+                  <a href="user.php?act=order_list">我的订单</a> <a href="user.php?act=message_list">我的留言</a> <a href="user.php?act=collection_list">我的收藏</a> <a href="user.php?act=affiliate">我的推荐</a> <a href="user.php?act=profile">用户信息</a> <a href="user.php?act=address_list">收货地址</a>
+                </ul>
+              </div>
+              <div class="dang"></div>
+            </ul>
+          </div>
+        </li>
+        <!--{if $navigator_list.top}-->
+        <!-- {foreach name=nav_top_list from=$navigator_list.top item=nav} -->
+        | <a href="{$nav.url}" 
+        <!-- {if $nav.opennew eq 1} -->
+        target="_blank"
+        <!-- {/if} -->
+        >{$nav.name}</a>
+        <!-- {/foreach} -->
+        <!-- {/if} -->
+      </ul>
+    </div>
+  </div>
+  <div class="yx_head yx_wrap">
+    <div class="logo">
+      <h1><a  href="index.php" class="logo_bd" title="模板堂"><span class="hide_clip">模板堂</span></a></h1>
+    </div>
+    <div class="stand_trans" >
+      <ul class="yx_slogan">
+        <li><a  target="_blank" href="#" title="打包"><img src="../images/dabao.jpg"></a></li>
+      </ul>
+    </div>
+    <div class="stand stand_seven"><span class="hide_clip">正品行货模板堂推荐</span></div>
+    <div id="search" class="search">
+      <div  class="search_bd">
+        <h2 class="hide_clip">搜索</h2>
+        <form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()"  >
+          <input name="keywords" type="text" id="keyword" value="请输入品牌或商品进行搜索" onclick="javascript:this.value=''" class="mod_search_txt no_cur" />
+          <input name="imageField" type="submit" value="" class="search_submit" style="width: 80px; margin:0; padding:0; line-height:32px;" />
+        </form>
+      </div>
+      <div  class="hot_keywords">
+        <div  class="hot_keywords">
+          <script type="text/javascript">
+    {literal}
+    <!--
+    function checkSearchForm()
+    {
+        if(document.getElementById('keyword').value)
+        {
+            return true;
+        }
+        else
+        {
+           alert("{$lang.no_keywords}");
+            return false;
+        }
+    }
+    -->
+    {/literal}
+	
+    </script>
+          {if $searchkeywords}
+          {foreach from=$searchkeywords item=val} <a href="search.php?keywords={$val|escape:url}">{$val}</a> {/foreach}
+          {/if}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="headBg">
+  <div   class="block clearfix" style=" position:relative; z-index:999; ">
+    <div id="mainNav" class="clearfix">
+      <div class="category_all2" > <a class="all" href="catalog.php">全部分类</a>
+        <div class="my_left_category my_left_category2" id="aaa" style=" background: #317EE7;  position:absolute; left:0; top:30px; width:200px; height:455px; overflow:hidden;">
+          <!--{foreach from=$categories item=cat name=cat1}-->
+          <!-- {if $smarty.foreach.cat1.iteration>0 && $smarty.foreach.cat1.iteration<8}-->
+          <dl >
+            <dt class="category_none" >
+              <p class="top_cate"> <a class="a1" href="{$cat.url}" >{$cat.name|escape:html} <i class="dot_cate"></i></a></p>
+              <p class="sub_cate">
+                <!--{foreach from=$cat.cat_id item=child }-->
+                <a  href="{$child.url}">{$child.name|escape:html}</a>
+                <!--{/foreach}-->
+              </p>
+              
+              
+            </dt>
+          </dl>
+          <!-- {/if} -->
+          <!--{/foreach}-->
+        </div>
+      </div>
+      <div class="mainNav_r">
+        <ul>
+          <li> <a class="aa" href="../index.php"  {if $navigator_list.config.index eq 1} id="aa_on"   {/if}>{$lang.home} </a> </li>
+          <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} -->
+          <li> <a  class="aa" {if $nav.active eq 1}  id="aa_on" {/if}  href="{$nav.url}" {if $nav.opennew eq 1}target="_blank" {/if}>{$nav.name}</a> </li>
+          <!-- {/foreach} -->
+        </ul>
+      </div>
+      <div class="buy_car_bg_box" >
+        <div class="buy_car_bg " id="ECS_CARTINFO"> {insert name='cart_info'}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
